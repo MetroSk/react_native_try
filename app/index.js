@@ -5,6 +5,7 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import {
     Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome }
  from '../components';
+import EventDetails from '../components/home/eventdetails/eventdetails';
 const Home = () => {
     const router = useRouter();
     return(
@@ -33,7 +34,7 @@ const Home = () => {
         padding: SIZES.medium
     }}
     >
-    <Welcome
+    <EventDetails
 
     />
 

@@ -34,7 +34,9 @@ const EventDetails = () => {
         {/* Location */}
         <View style={styles.detailRow}>
           <Image source={require('../../../assets/icons/Location2.png')} style={styles.icon} />
-          <Text style={styles.text}>{eventDetailsData.eventLocation}</Text>
+          <Text style={[styles.text, styles.labelText]}> { /* Add styles.labelText here */}
+            {eventDetailsData.eventLocation}
+          </Text>
         </View>
 
         {/* Price */}
@@ -42,12 +44,13 @@ const EventDetails = () => {
           <Text style={styles.labelText}>Price</Text>
           <Text style={styles.text}>{eventDetailsData.eventPrice}</Text>
         </View>
-<View>
-<Text style={styles.labelText}>Event Description</Text>
-</View>
+
+        <View>
+          <Text style={styles.labelText}>Event Description</Text>
+        </View>
+
         {/* Event Description */}
         <View style={styles.detailRow}>
-       
           <Text style={styles.text}>{eventDetailsData.eventDescription}</Text>
         </View>
 
@@ -66,7 +69,7 @@ const EventDetails = () => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
- // Dark gray background
+    backgroundColor: '#404040', // Dark gray background
   },
   backgroundPhoto: {
     width: '100%',
@@ -99,7 +102,7 @@ const styles = StyleSheet.create({
   labelText: {
     color: '#FFFFFF',
     fontSize: 16,
-    marginRight: 10,
+    marginRight: 16, // Adjust the margin to move text to the left
   },
   text: {
     color: '#FFFFFF',

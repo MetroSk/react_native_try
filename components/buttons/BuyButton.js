@@ -15,16 +15,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#40DA46', // Updated color
     paddingVertical: 20, // Increased vertical padding
     paddingHorizontal: 90, // Increased horizontal padding
-    borderRadius: 25, // Adjust the borderRadius as needed
+    borderRadius: 50, // Adjust the borderRadius as needed
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 150, // Adjust the margin as needed
+    marginTop: 70, // Adjust the margin as needed
     marginRight: 10,
   },
   applyButtonText: {
     color: '#FFFFFF', // Optional: Set text color
     fontSize: 18,
     fontWeight: 'bold',
+    
   },
 });
 

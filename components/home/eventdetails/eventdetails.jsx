@@ -4,20 +4,24 @@ import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 
 import eventDetailsData from './eventdetailsdata';
 import BuyButton from '../../buttons/BuyButton';
+import BackButton from '../../buttons/BackButton';
+import ShareButton from '../../buttons/ShareButton';
 
 const EventDetails = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
+        <ShareButton onPress={() => console.log('Share pressed')}  />
+      <BackButton onPress={() => console.log('Go back')} />
+      <Text style={styles.titleText}>Event Details</Text>
+
       {/* Background Photo */}
       <Image
         source={require('../../../assets/images/alex.jpg')} // Replace with your background photo
         style={styles.backgroundPhoto}
       />
-      
+
       {/* Event Details */}
       <View style={styles.detailsContainer}>
-        <Text style={styles.titleText}>Event Details</Text>
-
         {/* Event Name */}
         <Text style={styles.text}>{eventDetailsData.eventName}</Text>
 
@@ -38,9 +42,14 @@ const EventDetails = () => {
           <Text style={styles.labelText}>Price</Text>
           <Text style={styles.text}>{eventDetailsData.eventPrice}</Text>
         </View>
-
-        {/* Description */}
-        <Text style={styles.text}>{eventDetailsData.eventDescription}</Text>
+<View>
+<Text style={styles.labelText}>Event Description</Text>
+</View>
+        {/* Event Description */}
+        <View style={styles.detailRow}>
+       
+          <Text style={styles.text}>{eventDetailsData.eventDescription}</Text>
+        </View>
 
         {/* Buy Button */}
         <BuyButton />
@@ -57,7 +66,7 @@ const EventDetails = () => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#404040', // Dark gray background
+ // Dark gray background
   },
   backgroundPhoto: {
     width: '100%',
@@ -65,20 +74,17 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   detailsContainer: {
-    position: 'relative',
     flex: 1,
     padding: 20,
-    justifyContent: 'center',
+    justifyContent: 'flex-start', // Align content to the top
     alignItems: 'center',
   },
   titleText: {
-    position: 'absolute',
-    top: '50%', // Adjust as needed
     color: '#FFFFFF',
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
-    backgroundColor: 'transparent', // Set the background to transparent
+    marginBottom: 10,
   },
   detailRow: {
     flexDirection: 'row',
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#FFFFFF',
     fontSize: 16,
-    marginBottom: 10,
+    marginBottom: 15,
     textAlign: 'center',
   },
   buyButtonContainer: {

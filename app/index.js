@@ -6,6 +6,7 @@ import {
     Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome }
  from '../components';
 import EventDetails from '../components/home/eventdetails/eventdetails';
+import Checkout from '../components/home/checkout/checkout';
 const Home = () => {
     const router = useRouter();
     return(
@@ -34,7 +35,7 @@ const Home = () => {
         padding: SIZES.medium
     }}
     >
-    <EventDetails
+    <Checkout
 
     />
 
